@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    #puzzle-container {
+      margin: 50px auto;
+      max-width: 600px;
+    }
+
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+
+    #button-container {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      var answer1 = document.getElementById('answer1').value.toLowerCase();
+      var answer2 = document.getElementById('answer2').value.toLowerCase();
+      var answer3 = document.getElementById('answer3').value.toLowerCase();
+
+      if (answer1 === 'moon' && answer2 === 'rabbit' && answer3 === 'dog') {
+        document.getElementById('result').innerHTML = 'Congratulations! All answers are correct.';
+        // Redirect to the specified webpage
+        window.location.href = 'https://kanna29ka.github.io/lik/x.html';
+      } else {
+        document.getElementById('result').innerHTML = 'Oops! Some answers are incorrect. Try again.';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="puzzle-container">
+    <div class="question">1. I'm round and shiny, in the sky so high,<br>   I come out at night, a glowing eye.<br>   What am I?</div>
+    <input type="text" id="answer1" placeholder="Your answer">
+
+    <div class="question">2. I'm small and fluffy, with a twitchy nose,<br>   Hopping around where the green grass grows.<br>   What am I?</div>
+    <input type="text" id="answer2" placeholder="Your answer">
+
+    <div class="question">3. I'm a furry friend, with a wagging tail,<br>   Fetch is my favorite, I'll chase and prevail.<br>   What am I?</div>
+    <input type="text" id="answer3" placeholder="Your answer">
+
+    <div id="button-container">
+      <button onclick="checkAnswers()">Check Answers</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+</body>
+</html>
